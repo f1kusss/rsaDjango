@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">{%csrf_token%}
+        <p><b>Сообщение:</b></p>
+        <input type="text" name="message">
+        <input type="submit" value="Отправить" name="encode">
+    </form>
+    <div>
+        {% if answer %}
+        <div>
+            <p>Сообщение:<output> {{answer}}</output></p>
+        </div>
+        {% endif %}
+    </div>
+    <form method="post">{%csrf_token%}
+        <p><b>Зашифрованное сообщение:</b></p>
+        <input type="text" name="message_decode">
+        <input type="submit" value="Отправить" name="decode">
+    </form>
+    <div>
+        {% if ans %}
+        <div>
+            <p>Сообщение:<output> {{ans}}</output></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
